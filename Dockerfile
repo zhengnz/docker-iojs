@@ -1,5 +1,5 @@
 #base image
-FROM registry.aliyuncs.com/norman/centos6
+FROM registry.aliyuncs.com/norman/centos6:0.1.0
 
 #author
 MAINTAINER Norman 332535694@qq.com
