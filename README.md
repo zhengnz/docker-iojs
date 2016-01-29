@@ -1,3 +1,13 @@
+**目录结构**
+```
+web_root/
+....supervisor/
+........supervisor.ini
+........ssh.ini
+........app.ini
+....app.js
+```
+
 **docker-compose模板**
 ```yaml
 hs:
@@ -18,6 +28,7 @@ hs:
 
 **开机启动ssh服务**
 ```
+#ssh.ini
 [program:ssh]
 command=./run-ssh.sh
 user=root
@@ -32,6 +43,7 @@ stopsignal=QUIT
 
 **开机启动web服务**
 ```
+#app.ini
 [program:app]
 command=pm2 start app.js -i 1 --name hs --max-memory-restart 300M --no-daemon
 user=root
@@ -42,4 +54,13 @@ stdout_logfile=/home/log/app.log
 redirect_stderr=true
 stderr_logfile = /home/log/app-err.log
 stopsignal=QUIT
+```
+
+**设置supervisor账号密码**
+```
+#supervisor.ini
+[inet_http_server]
+port=0.0.0.0:9001
+username=admin
+password=123456
 ```
