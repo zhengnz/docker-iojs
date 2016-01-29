@@ -1,11 +1,12 @@
 **目录结构**
-```
-web_root/
-....supervisor/
-........supervisor.ini
-........ssh.ini
-........app.ini
-....app.js
+``
+/docker/data/web/
+....app/
+........supervisor/
+............supervisor.ini
+............ssh.ini
+............app.ini
+........app.js
 ```
 
 **docker-compose模板**
