@@ -18,8 +18,7 @@ RUN yum -y install postgresql && \
     ln -s /opt/node/bin/node /usr/bin/node && \
     ln -s /opt/node/bin/npm /usr/bin/npm && \
     yum install -y mysql mysql-devel && \
-    npm install -g cnpm --registry=https://registry.npm.taobao.org && \
-    cnpm install -g pm2 && \
+    npm install -g pm2 && \
     rm -f node-v4.4.0-linux-x64.tar.xz && rm -f node-v4.4.0-linux-x64.tar && \
     yum install -y tar openssl openssl-devel zlib-devel bzip2 bzip2-devel readline readline-devel && \
     yum -y install openssh-server epel-release pwgen && \
