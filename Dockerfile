@@ -7,12 +7,12 @@ MAINTAINER Norman 332535694@qq.com
 WORKDIR /
 ENV NODE_PATH /opt/node/lib/node_modules
 ENV PATH $PATH:/opt/node/bin
-ADD https://nodejs.org/dist/v4.4.0/node-v4.4.0-linux-x64.tar.xz node-v4.4.0-linux-x64.tar.xz
+ADD https://nodejs.org/dist/v4.4.0/node-v4.4.0-linux-x64.tar.xz node-v4.4.0-linux-x64.tar
 ADD set_root_pw.sh /set_root_pw.sh
 ADD run-ssh.sh /run-ssh.sh
 ADD supervisor.sh /supervisor.sh
 RUN chmod +x /*.sh && \
-    unxz node-v4.4.0-linux-x64.tar.xz && tar -xf node-v4.4.0-linux-x64.tar && \
+    tar -xf node-v4.4.0-linux-x64.tar && \
     mv node-v4.4.0-linux-x64 /opt/node && \
     ln -s /opt/node/bin/node /usr/bin/node && \
     ln -s /opt/node/bin/npm /usr/bin/npm && \
