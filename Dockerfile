@@ -11,7 +11,7 @@ ADD https://nodejs.org/dist/v4.4.0/node-v4.4.0-linux-x64.tar.xz node-v4.4.0-linu
 ADD set_root_pw.sh /set_root_pw.sh
 ADD run-ssh.sh /run-ssh.sh
 ADD supervisor.sh /supervisor.sh
-RUN yum -y update && yum -y install postgresql && \
+RUN yum -y update && rpm --rebuilddb && yum clean all && yum -y install postgresql && \
     chmod +x /*.sh && \
     unxz node-v4.4.0-linux-x64.tar.xz && tar -xf node-v4.4.0-linux-x64.tar && \
     mv node-v4.4.0-linux-x64 /opt/node && \
