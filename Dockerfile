@@ -17,7 +17,7 @@ RUN chmod +x /*.sh && \
     ln -s /opt/node/bin/node /usr/bin/node && \
     ln -s /opt/node/bin/npm /usr/bin/npm && \
     yum install -y postgresql mysql mysql-devel && \
-    npm install -g pm2 inotify && \
+    npm install -g pm2 && \
     rm -f node-v4.4.0-linux-x64.tar.xz && rm -f node-v4.4.0-linux-x64.tar && \
     yum install -y tar openssl openssl-devel zlib-devel bzip2 bzip2-devel readline readline-devel && \
     yum -y install openssh-server epel-release pwgen && \
